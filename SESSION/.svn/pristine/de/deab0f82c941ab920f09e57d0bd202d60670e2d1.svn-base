@@ -1,0 +1,48 @@
+package com.session.my;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserRepository {
+
+	private final List<Map<String, String>> userList = new ArrayList<>();
+	
+
+	public UserRepository() {
+
+		System.out.println("UserRepository 초기화");
+		
+		Map<String, String> userInfoOne = new HashMap<String, String>();
+		userInfoOne.put("username", "kim");
+		userInfoOne.put("password", "1111");
+		userInfoOne.put("email", "kim@naver.com");
+		
+		
+		Map<String, String> userInfoTwo = new HashMap<String, String>();
+		userInfoTwo.put("username", "hong");
+		userInfoTwo.put("password", "2222");
+		userInfoTwo.put("email", "hong@naver.com");
+		
+		
+		userList.add(userInfoOne);
+		userList.add(userInfoTwo);
+		
+		System.out.println("UserRepository userList 개수 : " + userList.size());
+	}
+
+
+	public void saveUser(Map<String, String> userInfoMap) throws Exception{
+		
+		userList.add(userInfoMap);
+		
+		System.out.println("UserRepository userList 개수 : " + userList.size());
+
+		
+	}
+	
+}

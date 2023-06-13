@@ -1,0 +1,36 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java"%>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+
+
+<h1>
+	Hello world!  
+</h1>
+
+<P>  The time on the server is ${serverTime}. </P>
+
+<%
+
+	session = request.getSession();
+    
+    if(session.getAttribute("userSession") != null){
+    	out.print("session name : " + session.getAttribute("userSession") + "<br>");
+    }
+    
+%>
+
+
+<br>
+<a href="/loginPage">login</a>
+<a href="/joinPage">join</a>
+<a href="/">home</a>
+<a href="/logout">logout</a>
+<a href="/products">products</a>
+<a href="/adminPage">admin</a>
+
+</body>
+</html>
